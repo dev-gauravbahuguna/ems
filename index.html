@@ -1,41 +1,47 @@
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css" /> 
-        <title>EMS- Signup</title>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <link rel="stylesheet" href="dashboard.css">
+    <title>EMS - Dashboard</title>
+</head>
+<body>
     <div class="nav">
-    EMPLOYEE MANAGEMENT SYSTEM    
+        <div class="logo">Employee Management System</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Employees</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+        <div class="user-menu">
+            <span>Admin</span> | <a href="/login.html">Logout</a>
+        </div>
     </div>
-   
-    <div class="title">Signup</div>
 
-    <form class="signup-form">
-        <div class="form-field">
-        <label>Name</label>
-        <input type="text"></input>
-        </div>
-        <div class="form-field">
-            <label>DOB</label>
-            <input type="date"></input>
-            </div>
-        <div class="form-field">
-        <label>Email</label>
-        <input type="text"></input>
-        </div>
-        <div class="form-field">
-        <label>Password</label>
-        <input type="password"></input>
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <h1>Dashboard</h1>
         </div>
         
-        <div class="form-field">
-        <input type="submit" value="Sign Up">
+        <div class="dashboard-content">
+            <div class="card">
+                <h2>Total Employees</h2>
+                <p id="total-employees">120</p>
+            </div>
+            <div class="card">
+                <h2>Departments</h2>
+                <p id="departments">8</p>
+            </div>
+            <div class="card">
+                <h2>Recent Activities</h2>
+                <ul id="recent-activities">
+                    <li>Gaurav was promoted to Senior Developer.</li>
+                    <li>Himanshu joined the Marketing team.</li>
+                    <li>Employee of the Month: Nitesh.</li>
+                </ul>
+            </div>
         </div>
-   
-            <div class="form-field">
-               <div>Already have an account <a href="/login.html">login</a> here</div>
-                </div>
-
-    </form>
-    </body>
-    </html>
+    </div>
+</body>
+</html>

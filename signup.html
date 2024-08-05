@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" /> 
+        <title>EMS- Signup</title>
+    </head>
+    <body>
+    <div class="nav">
+    EMPLOYEE MANAGEMENT SYSTEM    
+    </div>
+   
+    <div class="title">Signup</div>
+
+    <form class="form">
+        <div class="form-field">
+        <label>Name</label>
+        <input  type="text" required name="name"></input>
+        <div class="error" id="error-name"></div>
+        </div>
+        <div class="form-field">
+            <label>DOB</label>
+            <input type="date" required name="dob"></input>
+            <div class="error" id="error-dob"></div>
+            </div>
+        <div class="form-field">
+        <label>Email</label>
+        <input type="email" required name="email"></input>
+        <div class="error" id="error-email"></div>
+        </div>
+        <div class="form-field">
+        <label>Password</label>
+        <input type="password" required name="password"></input>
+        <div class="error" id="error-password"></div>
+
+        </div>
+         <div class="form-field">
+        <label>Confirm Password</label>
+        <input type="text" required name="confirmpassword"></input>
+        <div class="error" id="error-confirmpassword"></div>
+
+        </div>
+        <div class="error" id="error-password-final"></div>
+        <div class="form-field">
+        <input class="submit" onclick="submitform()" type="button" value="Sign Up">
+        </div>
+   
+            <div class="form-field">
+               <div>Already have an account <a href="/login.html">login</a> here</div>
+                </div>
+
+    </form>
+    </body>
+    <script src="signup.js"></script>
+    </html>
