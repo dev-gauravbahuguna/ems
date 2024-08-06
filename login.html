@@ -2,10 +2,11 @@
     <head>
         <link rel="stylesheet" type="text/css" href="style.css" /> 
         <title>EMS- Login</title>
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-    <div class="nav">
-    EMPLOYEE MANAGEMENT SYSTEM    
+    <div class="nav h-16">
+    <a href="index.html">EMPLOYEE MANAGEMENT SYSTEM  </a>  
     </div>
    
     <div class="title">Login</div>
@@ -13,11 +14,11 @@
     <form class="form">
        
         <div class="form-field">
-        <label>Email</label>
-        <input type="text"></input>
+        <label>Email</label><br>
+        <input type="text">
         </div>
         <div class="form-field">
-        <label>Password</label>
+        <label>Password</label><br>
         <input type="password"></input>
         </div>
         
@@ -28,7 +29,7 @@
             <a href="/passwordreset.html">Forgot Password</a>
             </div>
             <div class="form-field">
-               <div>Dont have an account <a href="/signup.html">signup</a> here</div>
+               <div>Dont have an account <a class="text-blue-500" href="/signup.html">signup</a> here</div>
                 </div>
 
     </form>

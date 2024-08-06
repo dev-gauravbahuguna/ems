@@ -1,12 +1,16 @@
 
-.nav{
+body{
+    background-color: rgb(177, 185, 192);
+}
 
-        
+.nav{
+     
     background-color: brown;
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    height: 20px;
     align-items: center;
     font-weight: 100;
     height: 30px;
@@ -16,48 +20,72 @@
 .title{
     margin-top: 18px;
     display: flex;
-    font-size: large;
+    font-size: x-large;
     font-weight: 700;
     justify-content: center;
   
 }
 
-.form{
-    margin-top: 12px;
-    width: 50%;
-    margin: auto;
-    padding: 20px;
-    background-color: rgb(0, 55, 65);
-    gap: 5px;
-    display: flex;
-    justify-content: center;
-    
-    flex-direction: column;
-}
+
 
 .form label{
     color: rgb(180, 180, 180);
+    font-size: large;
 }
 
 .form input{
     border: none;
-    padding:4px;
+    padding:4px 10px;
+    width: 300px;
+    font-size: large;
     
 }
 .submit{
     background-color: rgb(104, 243, 104);
     color: black;
     padding: 4px;
-    font-size: 12;
-    width: 200px;
+    font-size: x-large;
+   
     font-weight: 300;
 
 }
-.form-field{
+.form {
+    margin: 12px auto; 
+    padding: 20px;
+    background-color: rgb(0, 55, 65);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 500px; 
+}
+
+
+.form-field {
+    
     margin: auto;
+    width: auto; 
+    margin-top: 12px;
+    margin-bottom: 12px;
     color: white;
 }
 
 a{
     color: rgb(193, 255, 255);
+}
+
+@media (max-width: 600px) {
+    .form {
+        padding: 10px; /* Reduce padding on smaller screens */
+        max-width: 100%; /* Ensure form takes full width */
+    }
+    
+    .submit {
+        width: 100%; /* Make the submit button full width */
+        padding: 12px; /* Increase padding for better touch experience */
+    }
+}
+
+.error{
+    color: rgb(250, 134, 134);
 }

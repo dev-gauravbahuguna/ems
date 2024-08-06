@@ -2,38 +2,39 @@
     <head>
         <link rel="stylesheet" type="text/css" href="style.css" /> 
         <title>EMS- Signup</title>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     </head>
     <body>
-    <div class="nav">
-    EMPLOYEE MANAGEMENT SYSTEM    
+    <div class="nav h-16">
+    <a href="index.html">EMPLOYEE MANAGEMENT SYSTEM  </a>  
     </div>
    
     <div class="title">Signup</div>
 
     <form class="form">
-        <div class="form-field">
-        <label>Name</label>
+        <div class="form-field ">
+        <label>Name</label><br>
         <input  type="text" required name="name"></input>
         <div class="error" id="error-name"></div>
         </div>
         <div class="form-field">
-            <label>DOB</label>
+            <label>DOB</label><br>
             <input type="date" required name="dob"></input>
             <div class="error" id="error-dob"></div>
             </div>
         <div class="form-field">
-        <label>Email</label>
+        <label>Email</label><br>
         <input type="email" required name="email"></input>
         <div class="error" id="error-email"></div>
         </div>
         <div class="form-field">
-        <label>Password</label>
+        <label>Password</label><br>
         <input type="password" required name="password"></input>
         <div class="error" id="error-password"></div>
 
         </div>
          <div class="form-field">
-        <label>Confirm Password</label>
+        <label>Confirm Password</label><br>
         <input type="text" required name="confirmpassword"></input>
         <div class="error" id="error-confirmpassword"></div>
 
@@ -44,7 +45,7 @@
         </div>
    
             <div class="form-field">
-               <div>Already have an account <a href="/login.html">login</a> here</div>
+               <div>Already have an account <a class="text-blue-500" href="/login.html">login</a> here</div>
                 </div>
 
     </form>
