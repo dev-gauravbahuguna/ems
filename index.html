@@ -1,39 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="dashboard.css" />
     <title>EMS - Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+  
+  body {
+    background-color: rgb(255, 255, 255);
+  }
+  .nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+
+
+.user-menu a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+
+
+.dashboard-header h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+.card h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.card ul li {
+  margin-bottom: 10px;
+}
+
+}
+    </style>
   </head>
   <body>
-    <div class="nav h-16">
-      <div class="logo">Employee Management System</div>
-      <ul class="nav-links">
+    <div class="h-16 bg-red-900 text-white flex justify-between p-2 items-center font-extralight">
+      <div class="text-[24px]">Employee Management System</div>
+      <ul class="nav-links m-0 p-0 flex list-none">
         <li><a href="#">Home</a></li>
         <li><a href="#">Employees</a></li>
         <li><a href="#">Reports</a></li>
         <li><a href="#">Settings</a></li>
       </ul>
-      <div class="user-menu">
+      <div class="user-menu text-[16px]">
         <span>Admin</span> | <a href="/login.html">Logout</a>
       </div>
     </div>
 
-    <div class="dashboard">
+    <div class="dashboard p-5">
       <div class="dashboard-header">
         <h1>Dashboard</h1>
       </div>
 
-      <div class="dashboard-content">
-        <div class="card">
+      <div class="flex gap-5 flex-wrap">
+        <div class="card bg-[#f4f4f4] border border-gray-300 rounded-lg p-2 box-border w-1/4">
           <h2>Total Employees</h2>
           <p id="total-employees">120</p>
         </div>
-        <div class="card">
+        <div class="card bg-[#f4f4f4] border border-gray-300 rounded-lg p-2 box-border w-1/4">
           <h2>Departments</h2>
           <p id="departments">8</p>
         </div>
-        <div class="card">
+        <div class="card bg-[#f4f4f4] border border-gray-300 rounded-lg p-2 box-border w-1/4">
           <h2>Recent Activities</h2>
           <ul id="recent-activities">
             <li>Gaurav was promoted to Senior Developer.</li>

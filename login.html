@@ -3,31 +3,54 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>EMS- Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+  a {
+    color: rgb(193, 255, 255);
+  }
+  body {
+    background-color: rgb(177, 185, 192);
+  }
+  label {
+    color: rgb(180, 180, 180);
+    font-size: large;
+  }
+  input {
+    border: none;
+    padding: 4px 10px;
+    width: 300px;
+    font-size: large;
+  }
+  .error {
+    color: rgb(250, 134, 134);
+  }
+}
+    </style>
   </head>
   <body>
-    <div class="nav h-16">
+    <div class="bg-red-900 text-white flex justify-between p-2 items-center font-extralight h-16">
       <a href="index.html">EMPLOYEE MANAGEMENT SYSTEM </a>
     </div>
 
-    <div class="title">Login</div>
+    <div class="mt-5 flex text-xl justify-center font-bold">Login</div>
 
-    <form class="form">
-      <div class="form-field">
+    <form class="mx-auto my-3 p-5 bg-[#003741] rounded-2xl flex flex-col items-center w-[500px]">
+      <div class="m-auto w-auto mt-3 mb-4 text-white">
         <label>Email</label><br />
         <input placeholder="Enter your email" type="email" />
       </div>
-      <div class="form-field">
+      <div class="m-auto w-auto mt-3 mb-4 text-white">
         <label>Password</label><br />
         <input placeholder="Enter password" type="password" />
       </div>
 
-      <div class="form-field">
-        <input class="submit" type="submit" value="Sign Up" />
+      <div class="m-auto w-auto mt-3 mb-4 text-white">
+        <input class="bg-[#68F368] text-black p-1 text-xl font-light" type="submit" value="Sign Up" />
       </div>
-      <div class="form-field">
+      <div class="m-auto w-auto mt-3 mb-4 text-white">
         <a href="/passwordReset.html">Forgot Password</a>
       </div>
-      <div class="form-field">
+      <div class="m-auto w-auto mt-3 mb-4 text-white">
         <div>
           Dont have an account
           <a class="text-blue-500" href="/signup.html">signup</a> here
