@@ -1,31 +1,11 @@
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="auth.css">
+
     <title>EMS- Signup</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <style type="text/tailwindcss">
-      @layer utilities {
-  a {
-    color: rgb(193, 255, 255);
-  }
-  body {
-    background-color: rgb(177, 185, 192);
-  }
-  label {
-    color: rgb(180, 180, 180);
-    font-size: large;
-  }
-  input {
-    border: none;
-    padding: 4px 10px;
-    width: 300px;
-    font-size: large;
-  }
-  .error {
-    color: rgb(250, 134, 134);
-  }
-}
-    </style>
+   
     
   </head>
   <body>
@@ -43,7 +23,7 @@
       </div>
       <div class="m-auto w-auto mt-3 mb-4 text-white">
         <label>DOB</label><br />
-        <input placeholder="enter your date of birth" type="date" required name="dob" />
+        <input placeholder="Enter your date of birth" type="date" required name="dob" />
         <div class="error" id="error-dob"></div>
       </div>
       <div class="m-auto w-auto mt-3 mb-4 text-white">
@@ -53,7 +33,7 @@
       </div>
       <div class="m-auto w-auto mt-3 mb-4 text-white">
         <label>Password</label><br />
-        <input placeholder="enter your password" type="password" required name="password" />
+        <input placeholder="Enter your password" type="password" required name="password" />
         <div class="error" id="error-password"></div>
       </div>
       <div class="m-auto w-auto mt-3 mb-4 text-white">
@@ -73,7 +53,7 @@
 
       <div class="m-auto w-auto mt-3 mb-4 text-white">
         <div>
-          Already have an account
+          Already have an account?
           <a class="text-blue-500" href="/login.html">login</a> here
         </div>
       </div>

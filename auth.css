@@ -1,0 +1,20 @@
+a {
+    color: rgb(193, 255, 255);
+  }
+    body {
+    background-color: rgb(177, 185, 192);
+  }
+  label {
+    color: rgb(180, 180, 180);
+    font-size: large;
+  }
+    
+  form input {
+    border: none;
+    padding: 4px 10px;
+    width: 300px;
+    font-size: large;
+  }
+  .error {
+    color: rgb(250, 134, 134);
+  }
