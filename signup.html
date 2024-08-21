@@ -3,55 +3,101 @@
     <link rel="stylesheet" type="text/css" href="auth.css" />
     <title>EMS- Signup</title>
     <link href="./dist/output.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div
-      class="h-16 bg-red-900 text-white flex justify-between p-2 items-center font-extralight"
-    >
-      <a href="index.html" class="text-lg md:text-xl"
-        >EMPLOYEE MANAGEMENT SYSTEM</a
+    <div id="app">
+      <div
+        class="h-16 bg-red-900 text-white flex justify-between p-2 items-center font-extralight"
       >
+        <a href="index.html" class="text-lg md:text-xl"
+          >EMPLOYEE MANAGEMENT SYSTEM</a
+        >
+      </div>
+
+      <div class="container px-4 mx-auto mt-10">
+        <div class="max-w-lg px-10 mx-auto py-5 rounded-xl">
+          <div class="text-center mb-6">
+            <h2 class="text-3xl md:text-4xl font-extrabold">Sign up</h2>
+          </div>
+          <form>
+            <div class="mb-6">
+              <label class="block mb-2 font-extrabold" for="name">Name</label>
+              <input
+                v-model="formData.name"
+                class="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded"
+                name="name"
+                required
+                type="text"
+                placeholder="Name"
+              />
+              {{formData.name}}
+              <div class="error" v-if="errors.name">{{ errors.name }}</div>
+            </div>
+            <div class="mb-6">
+              <label class="block mb-2 font-extrabold" for="email">Email</label>
+              <input
+                v-model="formData.email"
+                class="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded"
+                name="email"
+                required
+                type="email"
+                placeholder="Email"
+              />
+              {{formData.email}}
+              <div class="error" v-if="errors.email">{{ errors.email }}</div>
+            </div>
+            <div class="mb-6">
+              <label class="block mb-2 font-extrabold" for="password"
+                >Password</label
+              >
+              <input
+                v-model="formData.password"
+                class="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded"
+                name="password"
+                required
+                type="password"
+                placeholder="**********"
+              />
+              <div class="error" v-if="errors.password">
+                {{ errors.password }}
+              </div>
+            </div>
+            <div class="mb-6">
+              <label class="block mb-2 font-extrabold" for="confirmPassword"
+                >Confirm Password</label
+              >
+              <input
+                v-model="formData.confirmPassword"
+                class="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded"
+                name="confirmPassword"
+                required
+                type="password"
+                placeholder="**********"
+              />
+              <div class="error" v-if="errors.confirmPassword">
+                {{ errors.confirmPassword }}
+              </div>
+              <div class="error" v-if="errors.final">{{ errors.final }}</div>
+            </div>
+            <button
+              @click.prevent="submitForm"
+              type="submit"
+              class="inline-block w-full py-4 px-6 mb-6 text-center text-lg leading-6 text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
+            >
+              Sign up
+            </button>
+            <p class="text-center font-extrabold">
+              Already have an account?
+              <a class="text-red-500 hover:underline" href="login.html"
+                >Log in</a
+              >
+            </p>
+          </form>
+        </div>
+      </div>
     </div>
-
-
-<div class="container px-4 mx-auto mt-10">
-  <div class="max-w-lg px-10 mx-auto py-5 rounded-xl">
-    <div class="text-center mb-6">
-      <h2 class="text-3xl md:text-4xl font-extrabold">Sign up</h2>
-    </div>
-    <form >
-      <div class="mb-6">
-        <label class="block mb-2 font-extrabold" for="">Name</label>
-        <input class="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded" name="name" required type="text" placeholder="Name">
-        <div class="error" id="error-name"></div>
-      </div>
-      <div class="mb-6">
-        <label class="block mb-2 font-extrabold" for="">Email</label>
-        <input class="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded" name="email" required type="email" placeholder="email">
-        <div class="error" id="error-email"></div>
-      </div>
-      <div class="mb-6">
-        <label class="block mb-2 font-extrabold" for="">Password</label>
-        <input class="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded" name="password" required type="password" placeholder="**********">
-        <div class="error" id="error-password"></div>
-      </div>
-      <div class="mb-6">
-        <label class="block mb-2 font-extrabold" for="">Confirm Password</label>
-        <input class="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-indigo-900 bg-white shadow border-2 border-indigo-900 rounded" name="confirmpassword" required type="password" placeholder="**********">
-        <div class="error" id="error-confirmpassword"></div>
-        <div class="error" id="error-password-final"></div>
-
-      </div>
-      
-      
-      
-      <button onclick="submitForm()" type="button" class="inline-block w-full py-4 px-6 mb-6 text-center text-lg leading-6 text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200">Sign in</button>
-      <p class="text-center font-extrabold">Already have an account? <a class="text-red-500 hover:underline"
-          href="login.html">Log in</a></p>
-    </form>
-  </div>
-</div>
-</div>
+    <script src="./signup.js"></script>
   </body>
-  <script src="signup.js"></script>
 </html>
