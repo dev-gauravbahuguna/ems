@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: hsl(0, 0%, 100%);
 }
 .nav-links li {
   margin: 0 15px;
