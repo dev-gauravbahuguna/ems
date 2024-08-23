@@ -1,4 +1,5 @@
 <script >
+import Navbar from './components/Navbar.vue';
 import Homepage from './views/Homepage.vue';
 export default {
   name: 'App',
@@ -7,12 +8,8 @@ export default {
   }
 }
 </script>
-
 <template>
-
-<Homepage/>
-
-
+<RouterView/>
 </template>
      
 

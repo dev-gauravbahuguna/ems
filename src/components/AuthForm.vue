@@ -127,7 +127,7 @@ export default {
         return this.isLogin ? 'Sign up' : 'Log in';
       },
       alternateLink() {
-        return this.isLogin ? '/login' : '/signup';
+        return this.isLogin ? '/signup' : '/login';
       }
     },
     methods: {

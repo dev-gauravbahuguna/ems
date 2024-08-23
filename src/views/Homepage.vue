@@ -4,7 +4,8 @@
   
   
   <script>
-  import Dashboard from '../components/Dashboard.vue'
+  import Navbar from '@/components/Navbar.vue';
+import Dashboard from '../components/Dashboard.vue'
   export default {
     name: 'Homepage',
     components: {

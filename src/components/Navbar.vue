@@ -90,7 +90,7 @@
     </header>
     
 </template>
-<router-view/>
+
 
 <script>
 
