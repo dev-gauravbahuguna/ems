@@ -10,7 +10,7 @@
   <div class="px-4 mx-auto py-10 bg-[#b1b9c0]">
     <div
       class="max-w-lg px-10 mx-auto py-5 rounded-xl"
-      :class="{ 'bg-blue-100': isLogin, 'bg-green-100': isSignup }"
+      :class="{ '': isLogin, '': isSignup }"
     >
       <div class="text-center mb-6">
         <h2 :class="{ 'text-3xl': isLogin, 'text-4xl': isSignup, 'font-extrabold': true }">
@@ -94,6 +94,7 @@
 </style>
 
 <script>
+import axios from 'axios';
 export default {
   name: 'AuthForm',
 
