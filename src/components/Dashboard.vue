@@ -20,15 +20,7 @@
   margin-bottom: 20px;
 }
 
-.card h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
 
-.card p {
-  font-size: 18px;
-  font-weight: bold;
-}
 
 .card ul {
   padding: 4px;
@@ -49,7 +41,7 @@
 </style>
 
 <template>
-  <div class="bg-white">
+  <div class="bg-amber-50">
     <Navbar />
 
     <main class="p-4 lg:p-5 hero h-full">
@@ -57,100 +49,104 @@
         <h1 class="text-xl lg:text-2xl font-bold">Dashboard</h1>
       </div>
 
-      <div
-        class="card lg:flex lg:flex-row lg:flex-wrap justify-evenly p-4 flex lg:flex-1 flex-1 flex-col gap-4 lg:min-w-[250px] border border-gray-300 rounded-md"
-      >
-        <div
-          class="bg-[#ececec] rounded-lg p-4"
-        >
-          <h2 class="text-lg font-semibold">Total Employees</h2>
-          <p id="total-employees" class="text-2xl">120</p>
-        </div>
-        <div
-          class="hover:bg-[#c9ffa6] cursor-pointer bg-[#ececec] rounded-lg p-4"
-          @click="openPopup('Departments', departmentsList, 'departments')"
-        >
-          <h2 class="text-lg font-semibold">Departments</h2>
-          <p id="departments" class="text-2xl">8</p>
-        </div>
-        <div
-          class="hover:bg-[#c9ffa6] cursor-pointer bg-[#ececec] rounded-lg p-4"
-          @click="openPopup('New Employees This Month', newEmployeesList, 'employees')"
-        >
-          <h2 class="text-lg font-semibold">New Employees This Month</h2>
-          <p id="new-employees" class="text-2xl">5</p>
-        </div>
-        <div
-          class="hover:bg-[#c9ffa6] cursor-pointer bg-[#ececec] rounded-lg p-4"
-          @click="openPopup('Open Positions', jobPositionsList, 'positions')"
-        >
-          <h2 class="text-lg font-semibold">Open Positions</h2>
-          <p id="open-positions" class="text-2xl">3</p>
-        </div>
-        <PopupModal
-          :visible="isPopupVisible"
-          :title="popupTitle"
-          :content="popupContent"
-          :type="popupType"
-          @close="closePopup"
-        />
-      </div>
+      <div class="card bg-orange-200 lg:flex lg:flex-row lg:flex-wrap justify-evenly p-4 flex lg:flex-1 flex-1 flex-col gap-4 lg:min-w-[250px] border border-gray-300 rounded-md">
+        
+        <!-- Total Employees -->
 
-      <div
-        class="card relative h-[250px] overflow-y-auto overflow-x-hidden bg-[#f4f4f4] border border-gray-300 rounded-lg flex-1 min-w-[250px]"
-      >
-        <h2 class="text-lg font-semibold sticky bg-inherit top-0 p-3 z-10">Recent Activities</h2>
-        <table class="table-auto w-full ml-3">
-          <tbody>
-            <tr class="hover:bg-slate-300" v-for="(activity, index) in topActivities" :key="index">
-              <td class="py-2 px-1">{{ activity.title }}</td>
-              <td class="py-2 px-1 font-semibold">{{ activity.date }}</td>
-            </tr>
-          </tbody>
-        </table>
-        <button
-          v-if="allActivities.length > 5"
-          @click="goToRecentActivities"
-          class="px-4 pb-4 text-blue-500 underline"
-        >
-          View All
-        </button>
+            <div class="rounded-lg p-4">
+              <h2 class="text-lg font-semibold">Total Employees</h2>
+              <p id="total-employees" class="text-5xl font-bold text-green-500">120+</p>
+            </div>
+
+        
+        <!-- Departments -->
+        <Dropdown>
+          <template #trigger>
+             <div class=" cursor-pointer rounded-lg p-4">
+           
+              <h2 class="text-lg font-semibold ">Departments</h2>
+              <p id="departments" class="text-2xl text-green-700">8</p>
+            </div>
+          </template>
+          <template #content>
+            <ul class="p-4 space-y-2">
+              <li
+                v-for="(department, index) in departmentsList"
+                :key="index"
+                class="text-lg hover:bg-slate-300 px-3 rounded-sm cursor-pointer"
+              >
+                {{ department.name }}
+              </li>
+            </ul>
+          </template>
+        </Dropdown>
+        
+        <!-- New Employees This Month -->
+        <Dropdown>
+          <template #trigger>
+            <div  class=" cursor-pointer rounded-lg p-4">
+              <h2 class="text-lg font-semibold">New Employees This Month</h2>
+              <p id="new-employees" class="text-2xl text-green-700">5</p>
+            </div>
+          </template>
+          <template #content>
+            <ul  v-for="(employee, index) in newEmployeesList"
+            :key="index" class="p-4 space-y-2 m-2 ">
+              <li            
+              >
+                <div class="text-lg font-semibold">{{ employee.name }}</div>
+                <p class="text-sm  text-gray-600">{{ employee.position }}</p>
+                <p class="text-sm  text-gray-500">Joined: {{ employee.date }}</p>
+              </li>
+            </ul>
+          </template>
+        </Dropdown>
+
+        <!-- Open Positions -->
+        <Dropdown>
+          <template #trigger>
+            <div class=" cursor-pointer rounded-lg p-4">
+              <h2 class="text-lg font-semibold">Open Positions</h2>
+              <p id="open-positions" class="text-2xl text-green-700">3</p>
+            </div>
+          </template>
+          <template #content>
+            <ul class="p-4 space-y-2">
+              <li
+                class="m-2"
+                v-for="(job, index) in jobPositionsList"
+                :key="index"
+              >
+                <a :href="job.url" target="_blank" class="text-lg text-blue-500 hover:underline">{{ job.title }}</a>
+                <p class="text-sm text-gray-600">Experience: {{ job.experience }}</p>
+              </li>
+            </ul>
+          </template>
+        
+        </Dropdown>
+
       </div>
+      <RecentActivities :activities="topActivities"  />
     </main>
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue'
-import PopupModal from './PopupModal.vue'
 import { ref } from 'vue'
+import Dropdown from './Dropdown.vue';
+import RecentActivities from './RecentActivities.vue';
 
 export default {
   name: 'Dashboard',
   components: {
     Navbar,
-    PopupModal
-  },
-  data() {
-    return {
-      isPopupVisible: false,
-      popupTitle: '',
-      popupContent: [],
-      popupType: ''
-    }
-  },
-  methods: {
-    openPopup(title, content, type) {
-      this.popupTitle = title
-      this.popupContent = content
-      this.popupType = type
-      this.isPopupVisible = true
-    },
-    closePopup() {
-      this.isPopupVisible = false
-    }
+    Dropdown,
+    RecentActivities
   },
 
+
+  
   setup() {
     const allActivities = ref([
       { title: 'Gaurav was promoted to Senior Developer.', date: '2024-08-25' },
@@ -194,9 +190,12 @@ export default {
       { name: 'IT' }
     ]
 
+    
+
     const topActivities = ref(allActivities.value.slice(0, 7))
 
     return { allActivities, topActivities, jobPositionsList, departmentsList, newEmployeesList }
   }
 }
 </script>
+

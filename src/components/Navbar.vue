@@ -84,9 +84,7 @@
       <li>
         <a href="#" class="hidden lg:block hover:text-gray-300">Home</a>
       </li>
-      <li>
-        <a href="#" class="hidden lg:block hover:text-gray-300">Employees</a>
-      </li>
+      
       <li>
         <a href="#" class="hidden lg:block hover:text-gray-300">Reports</a>
       </li>
@@ -105,7 +103,6 @@
     class="fixed mt-16 inset-0 bg-gray-900 bg-opacity-90 z-50 w-1/2 flex flex-col gap-9 p-4 space-y-4 lg:hidden hidden"
   >
     <a href="#" class="text-white text-xl hover:text-gray-300">Home</a>
-    <a href="#" class="text-white text-xl hover:text-gray-300">Employees</a>
     <a href="#" class="text-white text-xl hover:text-gray-300">Reports</a>
     <a href="#" class="text-white text-xl hover:text-gray-300">Settings</a>
     <router-link to="/login" class="text-white text-xl hover:text-gray-300">Logout</router-link>
